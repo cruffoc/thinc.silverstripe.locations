@@ -3,13 +3,16 @@ class PointOfInterestCategory extends DataObject {
 	static $db = array();
 	
 	static $has_one = array(
-	    //'Icon' => 'Image',
+	    'Icon' => 'Image',
+		'Name' => 'Varchar(255)'
 	);
 	
 	
 	static $has_many = array(
 		'PointOfInterest' => 'PointOfInterestPage'
 	);
+	
+	static $default_sort = 'Name ASC';
 	
     private function getLocales() {
         return Translatable::get_allowed_locales();
@@ -50,7 +53,7 @@ class PointOfInterestCategory extends DataObject {
         if (!$obj)return 'no name';
         return $obj->Name;
     }
-/*   
+   
    public function onAfterWrite() {
    	    parent::onAfterWrite();
 
@@ -76,7 +79,7 @@ class PointOfInterestCategory extends DataObject {
             $obj->write();
         }
    	}
-*/   	
+   	
  	
    	public function getCMSFields(){
    		$fields = parent::getCMSFields(array('includeRelations'=>false));

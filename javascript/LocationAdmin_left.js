@@ -36,24 +36,7 @@ SiteTree.prototype = {
 			
 			return node;
 		},
-		
-		addLocationNode: function( title, parentID, draftID ) {
-			var st = $('sitetree');
-			// BUGFIX: If there is nothing in the left tree we need to add a Newsletter type first to prevent errors
-			if(typeof st.lastTreeNode() == 'undefined') {
-				$('sitetree').addTypeNode('New newsletter type', $('Form_EditForm_ID').value ); 
-			}
-			// BUGFIX: If no selection is made in the left tree, and a draft is added, parentID won't be set,
-			// so we need to use the value from the Draft edit form.
-			parentID = $('Form_EditForm_ParentID').value;
-			var draftNode = this.createTreeNode( 'draft_' + parentID + '_' + draftID, title, 'Draft', parentID );
-			this.getTreeNodeByIdx('drafts_' + parentID).appendTreeNode( draftNode );
-			this.changeCurrentTo( draftNode );
-		},
-		
-		addCategoryNode: function( title, parentID ) {
 
-		}
 	}
 
 var addObject = {		
@@ -73,8 +56,8 @@ var addObject = {
 SiteTreeNode.prototype.getPageFromServer = function() {
 	
     var match = this.id.match(/(location|category)-([\d]+)$/);
-
-    $('Form_EditForm').getPageFromServer(match[2],this);
+    if (match) 
+    	$('Form_EditForm').getPageFromServer(match[2],this);
 	
 		
 }

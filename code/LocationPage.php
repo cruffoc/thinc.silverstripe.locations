@@ -13,6 +13,14 @@ class LocationPage extends Page {
         "ProvideComments" => false,
         'ShowInMenus' => false
     );
+    
+    function getCMSFields() {
+    	$fields = parent::getCMSFields();
+    	$fields->addFieldToTab('Root.Content.Main', new TextField('Zip','Plz'),'Content');
+    	$fields->addFieldToTab('Root.Content.Main', new TextField('Country','Land'),'Content');
+    	$fields->addFieldToTab('Root.Content.Main', new ImageField('Emblem','Wappen'),'Content');
+    	return $fields;
+    }
 }
 
 class LocationPage_Controller extends Page_Controller {
@@ -22,8 +30,6 @@ class LocationPage_Controller extends Page_Controller {
 	}
 	
 	public function getCategories() {
-
-		
 		$cats = DataObject::get(
 			'PointOfInterestCategoryContent',
 			'"SiteTree"."ParentID" = '.$this->ID,

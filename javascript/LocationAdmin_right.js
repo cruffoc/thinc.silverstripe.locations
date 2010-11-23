@@ -1,4 +1,4 @@
-
+/*
 CMSRightForm.prototype.getPageFromServer = function(id, treeNode) {
 	var match = treeNode.id.match(/(location|category)-([\d]+)$/);
 	id = parseInt(match[2]);
@@ -50,3 +50,4 @@ CMSRightForm.prototype.successfullyReceivedPage = function(response,pageID) {
     document.body.style.cursor = 'default';
     
 }
+*/
