@@ -24,7 +24,7 @@ class LocationAdmin extends LeftAndMain {
     public function addCategory() {
         $category = new PointOfInterestCategory();
     	$category->write();
-    	$content = DataObject::get_one('PointOfInterestCategoryContent','PointOfInterestCategoryID='.$category->ID);
+    	$content = DataObject::get_one('PointOfInterestCategory','PointOfInterestCategoryID='.$category->ID);
     	$content->Name = $category->Name = _t('Poi.NEWCategory',"New Category");
     	$content->write();
         $response = <<<JS
@@ -89,7 +89,7 @@ JS;
 		$form->saveInto($record);
 		$record->write();
 		FormResponse::add('$(\'Form_EditForm\').getPageFromServer('.$record->ID.');');
-		FormResponse::add('$(\'sitetree\').setNodeTitle("category-'.$record->ID.'","'.$record->Name().'");');
+		FormResponse::add('$(\'sitetree\').setNodeTitle("category-'.$record->ID.'","'.$record->Name.'");');
 		FormResponse::add('$(\'Form_EditForm\').updateStatus(\'Saved (update)\');');
 		FormResponse::status_message(_t('Category.SAVED','Saved'), 'good');
 		$result = $this->getActionUpdateJS($record);
@@ -105,18 +105,10 @@ JS;
     
     public function loadTree($request){
     	$tree = '';
-    	if ($request->getVar('ID') == 'categories') {
-    		$items = DataObject::get('PointOfInterestCategory','','');
-    		$id = 'category';
-    	   	foreach($items AS $loc) {
-    			$tree .= '<li id="'.$id.'-'.$loc->ID.'"><a href="admin/locations/show'.$id.'/'.$loc->ID.'" title="'.$loc->Name().'">'.$loc->Name().'</a></li>';
-    		}
-    	} else {
-    		$items = DataObject::get('Location','','Name');
-    		$id = 'location';
-    	    foreach($items AS $loc) {
-    			$tree .= '<li id="'.$id.'-'.$loc->ID.'"><a href="admin/locations/show'.$id.'/'.$loc->ID.'" title="'.$loc->Name.'">'.$loc->Name.'</a></li>';
-    		}
+    	$items = DataObject::get('PointOfInterestCategory','','');
+    	$id = 'category';
+    	foreach($items AS $cat) {
+    		$tree .= '<li id="'.$id.'-'.$cat->ID.'"><a href="admin/locations/show'.$id.'/'.$cat->ID.'" title="'.$cat->Name.'">'.$cat->Name.'</a></li>';
     	}
     	return $tree;
     }    
