@@ -31,11 +31,10 @@ class LocationPage_Controller extends Page_Controller {
 	
 	public function getCategories() {
 		$cats = DataObject::get(
-			'PointOfInterestCategoryContent',
+			'PointOfInterestCategory',
 			'"SiteTree"."ParentID" = '.$this->ID,
 			'"SiteTree"."Title" ASC',
 			'
-			INNER JOIN PointOfInterestCategory ON "PointOfInterestCategoryContent"."PointOfInterestCategoryID" = "PointOfInterestCategory"."ID"
 			INNER JOIN PointOfInterestPage ON "PointOfInterestCategory"."ID" = "PointOfInterestPage"."CategoryID"
 			INNER JOIN SiteTree ON "SiteTree"."ID" = "PointOfInterestPage"."ID"
 			'
@@ -45,7 +44,7 @@ class LocationPage_Controller extends Page_Controller {
 		foreach ($cats AS $cat) {
 			$cat->Pois = DataObject::get(
 				'PointOfInterestPage',
-				'ParentID='.$this->ID.' AND CategoryID='.$cat->PointOfInterestCategoryID,
+				'ParentID='.$this->ID.' AND CategoryID='.$cat->ID,
 				'"SiteTree"."Title" ASC'
 			);
 		}

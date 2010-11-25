@@ -66,7 +66,7 @@ class PointOfInterestPage extends Page {
     	$categories = DataObject::get('PointOfInterestCategory');
     	$cat_source = array(0=>'--');
     	foreach ($categories AS $cat) {
-    		$cat_source[$cat->ID] = $cat->Name();
+    		$cat_source[$cat->ID] = $cat->Name;
     	}    
     	$select_category = new DropdownField('CategoryID','Category',$cat_source);
     	$select_category->setValue($this->CategoryID);	

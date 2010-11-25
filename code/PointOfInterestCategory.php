@@ -1,10 +1,11 @@
 <?php
 class PointOfInterestCategory extends DataObject {
-	static $db = array();
+	static $db = array(
+		'Name' => 'Varchar(255)'
+	);
 	
 	static $has_one = array(
 	    'Icon' => 'Image',
-		'Name' => 'Varchar(255)'
 	);
 	
 	
@@ -14,6 +15,8 @@ class PointOfInterestCategory extends DataObject {
 	
 	static $default_sort = 'Name ASC';
 	
+	
+	/*
     private function getLocales() {
         return Translatable::get_allowed_locales();
     }
@@ -30,7 +33,7 @@ class PointOfInterestCategory extends DataObject {
         }
         return $fieldSet;
     }
-	
+	/*
     private function appendContentFields($fieldSet) {
         foreach ($this->getLocales() AS $locale) {
             $obj = DataObject::get_one('PointOfInterestCategoryContent','PointOfInterestCategoryID = '.$this->ID . ' AND "PointOfInterestCategoryContent"."Locale" = \''.$locale.'\'');
@@ -47,13 +50,14 @@ class PointOfInterestCategory extends DataObject {
         }
         return $fieldSet;
     }
-    
+    /*
     public function Name() {
         $obj = DataObject::get_one('PointOfInterestCategoryContent','PointOfInterestCategoryID='.$this->ID);
         if (!$obj)return 'no name';
         return $obj->Name;
     }
-   
+    */
+   /*
    public function onAfterWrite() {
    	    parent::onAfterWrite();
 
@@ -79,7 +83,7 @@ class PointOfInterestCategory extends DataObject {
             $obj->write();
         }
    	}
-   	
+   	*/
  	
    	public function getCMSFields(){
    		$fields = parent::getCMSFields(array('includeRelations'=>false));
@@ -92,7 +96,7 @@ class PointOfInterestCategory extends DataObject {
     	));
     	$complexTable->requirementsForPopupCallback = 'requirementsForPopup';
     	*/
-   		$this->appendContentFields($fields);
+   		//$this->appendContentFields($fields);
    		
    		return $fields;
    	}
