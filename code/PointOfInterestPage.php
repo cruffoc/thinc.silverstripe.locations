@@ -79,11 +79,6 @@ class PointOfInterestPage extends Page {
         //$location->setValue($this->Parent->Zip . ' '. $this->Parent->Title . ', ' . $this->Parent->Country);
         //$fields->addFieldToTab('Root.Content.Poi',new FormAction('GetCoords',_t('Location.GETCOORDS','Location.GETCOORDS')),'Latitude');
         //$fields->addFieldToTab('Root.Content.Poi',new MapField('GoogleMap','GoogleMap'),'Latitude');
-        
-       
-    	
-    	
-    	
         return $fields;
     }
 /*	

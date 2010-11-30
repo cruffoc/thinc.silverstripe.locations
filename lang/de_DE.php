@@ -10,12 +10,7 @@ if(array_key_exists('de_DE', $lang) && is_array($lang['de_DE'])) {
 }
 
 
-$lang['de_DE']['LocationAdmin']['MENUTITLE'] = 'Ortsinformationen';
-$lang['de_DE']['Locations']['LOCATIONSINFORMATION'] = 'Ortsinformationen';
-$lang['de_DE']['Locations']['LOCATIONS'] = 'Orte';
-$lang['de_DE']['Locations']['LOCATION'] = 'Ort';
-$lang['de_DE']['Poi']['CATEGORIES'] = 'Kategorien';
-$lang['de_DE']['Poi']['CATEGORY'] = 'Kategorie';
+
 
 
 ?>

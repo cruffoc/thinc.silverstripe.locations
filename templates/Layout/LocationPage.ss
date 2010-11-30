@@ -1,7 +1,9 @@
 <h1>
 $Title
 </h1>
+<% if Emblem %>
 <img src="$Emblem.Link" alt="" class="emblem left" />
+<% end_if %>
 $Zip
 $Country
 <div class="info-poi">
