@@ -9,6 +9,8 @@ if(array_key_exists('de_DE', $lang) && is_array($lang['de_DE'])) {
     $lang['de_DE'] = $lang['en_US'];
 }
 
+$lang['de_DE']['Poi']['LOCATION_CONTACT'] = 'Lageplan & Kontakt';
+
 
 
 
