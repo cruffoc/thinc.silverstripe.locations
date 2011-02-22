@@ -1,42 +1,4 @@
 @CHARSET "UTF-8";
-#OverviewMap {
-    width:100%;
-    height:400px;
-    margin-bottom:20px;
-}
-
-.data-filter {
-    margin-bottom:1em;
-}
-
-
-.category-icon {
-    margin-right:5px;
-}
-
-.poi-category {
-    border-bottom:1px solid #666666;
-    padding-bottom:5px;
-    margin-bottom:5px;
-}
-
-.info-poi{
-    clear:both;
-}
-
-
-.poi-table td {
-    padding:0px 15px 15px 0px;
-}
-
-.column-name {
-    width:300px;
-}
-
-.column-email {
-	padding-right:0px;
-    width:200px;
-}
-.poi-adress {
-    margin-top:20px;
-}
+#GoogleMap {width:100%;height:300px;float:left;}
+.contact h3 {margin-bottom:15px;margin-top:15px;}
+.contact span.label{margin-left:10px;width:80px;display:block;float:left;font-weight:bold;}

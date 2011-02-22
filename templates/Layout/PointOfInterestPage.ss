@@ -5,16 +5,17 @@ $Title
 <img class="right" src="$Image.Link" alt="$Title" />
 <% end_if %>
 $Content
-
-
-<h3><% _t('Poi.LOCATION_CONTACT','Poi.LOCATION_CONTACT') %></h3>
-<div id="GoogleMap" style="width:100%;height:300px;"></div>
-<div class="adress">
-     <% if Street %>$Street<br /><% end_if %>
-     <% if Tel %>$Tel<br /><% end_if %>
-     <% if Mobile %>$Mobile<br /><% end_if %>
-     <% if Fax %>$Fax<br /><% end_if %>
-
-    <% if Website %><a href="$PointOfInterest.Website">$Website</a><br /><% end_if %>
-    <% if Email %><a href="mailto:$PointOfInterest.Email">$Email</a><% end_if %>
+<div class="contact">
+<h3><% _t('CONTACT','CONTACT') %></h3>
+    <div id="GoogleMap" style="width:300px;height:300px;"></div>
+    <div class="adress">
+         <% if Street %><span class="label"><% _t('ADDRESS','ADDRESS') %></span>$Street<br /><% end_if %>
+         <% if Location %><span class="label">&nbsp;</span>$Location.Zip $Location.Title<br /><% end_if %>
+         <% if Tel %><span class="label"><% _t('PHONE','PHONE') %></span>$Tel<br /><% end_if %>
+         <% if Mobile %><span class="label"><% _t('MOBILE','MOBILE') %></span>$Mobile<br /><% end_if %>
+         <% if Fax %><span class="label"><% _t('FAX','FAX') %></span>$Fax<br /><% end_if %>
+    
+        <% if Website %><span class="label"><% _t('WEBSITE','WEBSITE') %></span><a href="http://$Website" target="_blank">$Website</a><br /><% end_if %>
+        <% if Email %><span class="label"><% _t('EMAIL','EMAIL') %></span><a href="mailto:$Email">$Email</a><% end_if %>
+    </div>
 </div>
