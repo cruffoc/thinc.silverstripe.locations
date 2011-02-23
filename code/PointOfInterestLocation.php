@@ -1,5 +1,5 @@
 <?php
-class Location extends DataObject {
+class PointOfInterestLocation extends DataObject {
 	static $db = array(
 	    'Title' => 'Varchar(255)',
 	    'Zip'  => 'Varchar(10)',

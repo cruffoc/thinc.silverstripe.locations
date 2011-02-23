@@ -1,7 +1,7 @@
 <?php
 class PointOfInterestCategory extends DataObject {
 	static $db = array(
-		'Name' => 'Varchar(255)'
+		'Title' => 'Varchar(255)'
 	);
 	
 	static $has_one = array(
@@ -13,7 +13,7 @@ class PointOfInterestCategory extends DataObject {
 		'PointOfInterest' => 'PointOfInterestPage'
 	);
 	
-	static $default_sort = 'Name ASC';
+	static $default_sort = 'Title ASC';
  	
    	public function getCMSFields(){
    		$fields = parent::getCMSFields(array('includeRelations'=>false));   		

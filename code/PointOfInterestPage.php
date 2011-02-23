@@ -13,7 +13,7 @@ class PointOfInterestPage extends Page {
 
     static $has_one = array(
 	   'Category' => 'PointOfInterestCategory',
-       'Location' => 'Location'
+       'Location' => 'PointOfInterestLocation'
     );
 
     public function getCMSFields() {
@@ -23,7 +23,7 @@ class PointOfInterestPage extends Page {
        		'tabbed'=>false,
        		'restrictFields'=>array('Tel','Mobile','Fax','Email','Website'))) 
         );
-        $tableField = new HasOneComplexTableField($this, 'Location', 'Location',array('Zip'=>_t('Location.Zip','Location.Zip'),'Title'=>_t('Location.Title','Location.Title'),'Country'=>_t('Location.Country','Location.Country')));
+        $tableField = new HasOneComplexTableField($this, 'Location',PointOfInterestPage::$has_one['Location'] ,array('Zip'=>_t('Location.ZIP','Location.ZIP'),'Title'=>_t('Location.TITLE','Location.TITLE'),'Country'=>_t('Location.COUNTRY','Location.COUNTRY')));
         $tableField->setOneToOne();      
         $fields->addFieldToTab('Root.Content.PoiLocation', $tableField); 
         
