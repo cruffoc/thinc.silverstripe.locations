@@ -6,9 +6,7 @@
         var marker = null;
         var geocoder = new google.maps.Geocoder();
         var elevator = new google.maps.ElevationService();
-        
 
-        
         var myOptions = {
             zoom: 16,
             disableDefaultUI: false,
@@ -18,7 +16,6 @@
             keyboardShortcuts:false,
             scrollwheel:true
         };
-        initMap();
         
         function setMarker(location){
             if (marker != null) {
@@ -40,7 +37,7 @@
                     if (status == google.maps.GeocoderStatus.OK) {
                         $('input[name=Latitude]').val(results[0].geometry.location.lat());
                         $('input[name=Longitude]').val(results[0].geometry.location.lng());
-                        initMap();
+                        setMarker(results[0].geometry.location);
                     }
                 });
                 
@@ -51,9 +48,9 @@
         $('input[name=action_GetCoords]').livequery('click',
                 function(e) {
                     // get the data needed to ask coords
-                    var col = $('#Form_EditForm_Location').find('input:checked').parent().next('td');
-                    var location = col.html() + ' ' + col.next('td').html() + ', ' + col.next('td').next('td').html();
-                    var address = $('#Form_EditForm_Street').val() + ', ' + location
+                    var location = $('input[name=LocationInfo]').val();
+                    var address = $('input[name=Street]').val() + ', ' + location;
+                    alert(address);
                     setCoordByAddress(address);
                     return false;
                  }
@@ -67,17 +64,9 @@
                 marker = null;
                 setMarker(myOptions.center);
             }            
-        }
+        }       
         
-        // problems initializing google maps in hidden field, so init when tab poi adress is opened
-        $('#tab-Root_Content_set_PoiAdress').livequery('click',
-                function(e) {
-                    initMap();
-                    return false;
-                 }
-        );        
-        
-        
+        initMap();
         
     });
 })(jQuery);	

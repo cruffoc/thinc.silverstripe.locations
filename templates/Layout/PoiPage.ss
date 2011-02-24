@@ -1,3 +1,4 @@
+<% control Poi %>
 <h1>
 $Title
 </h1>
@@ -19,3 +20,4 @@ $Content
         <% if Email %><span class="label"><% _t('EMAIL','EMAIL') %></span><a href="mailto:$Email">$Email</a><% end_if %>
     </div>
 </div>
+<% end_control %>

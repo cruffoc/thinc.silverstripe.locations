@@ -9,6 +9,7 @@ class MapField extends DatalessField {
      */
     protected $headingLevel = 2;
     private $divId;
+    
     function __construct($name, $title = null, $headingLevel = 2, $allowHTML = false, $form = null) {
     	$this->divId = $name;
         // legacy handling for old parameters: $title, $heading, ...
@@ -30,6 +31,10 @@ class MapField extends DatalessField {
     }
     
     function Field() {
+        Requirements::javascript('sapphire/thirdparty/jquery/jquery.js');
+        Requirements::javascript('sapphire/thirdparty/jquery-livequery/jquery.livequery.js');
+        Requirements::javascript('http://maps.google.com/maps/api/js?sensor=false');
+        Requirements::javascript('locations/javascript/mapField.js');
         $attributes = array(
             'class' => 'middleColumn',
             'id' => $this->divId,
