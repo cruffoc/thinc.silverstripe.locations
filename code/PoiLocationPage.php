@@ -2,6 +2,7 @@
 class PoiLocationPage extends Page {
 	static $db = array(
 	    'Zip'  => 'Varchar(10)',
+	    'City' => 'Varchar(255)',
 	    'Country' => 'Varchar(255)'
 	);
 	
@@ -17,7 +18,7 @@ class PoiLocationPage extends Page {
 	    $fields = parent::getCMSFields();
 	    $fields->addFieldsToTab(
 	    	'Root.Content.Location', 
-	        $this->scaffoldFormFields(array('tabbed'=>false,'restrictFields'=>array('Emblem','Zip','Country')))
+	        $this->scaffoldFormFields(array('tabbed'=>false,'restrictFields'=>array('Emblem','City','Zip','Country')))
 	    );
 	    $poiTable = new ComplexTableField($this, 'Pois', 'Poi');
 	    $fields->addFieldsToTab(

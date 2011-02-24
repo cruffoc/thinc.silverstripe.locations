@@ -24,7 +24,9 @@ class Poi extends DataObject {
        		'restrictFields'=>array('Title','Category','Tel','Mobile','Fax','Email','Website','Street'))
         );
         
-        $cityField = new ReadonlyField('LocationInfo',_t('Location.Title','Location.Title'),$this->Location()->Zip . ' ' .$this->Location()->Title . ', ' . $this->Location()->Country );
+        //take the location page title if no city is given
+        $city = ($this->Location()->City) ? $this->Location()->City : $this->Location()->Title;
+        $cityField = new ReadonlyField('LocationInfo',_t('Location.Title','Location.Title'),$this->Location()->Zip . ' ' . $city . ', ' . $this->Location()->Country );
         $fields->push($cityField);
         $fields->merge($this->scaffoldFormFields(array(
        		'tabbed'=>false,

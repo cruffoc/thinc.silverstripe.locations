@@ -50,7 +50,6 @@
                     // get the data needed to ask coords
                     var location = $('input[name=LocationInfo]').val();
                     var address = $('input[name=Street]').val() + ', ' + location;
-                    alert(address);
                     setCoordByAddress(address);
                     return false;
                  }
