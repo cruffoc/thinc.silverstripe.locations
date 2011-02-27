@@ -23,11 +23,19 @@
             } else {
                 marker = new google.maps.Marker({
                   position: location,
-                  title:"Position"
+                  title:"Position",
+                  draggable:true
                 });
                 marker.setMap(map);
+                google.maps.event.addListener(marker, 'dragend',setCoordByMarker);
             }
             map.setCenter(location) 
+        }
+        
+        function setCoordByMarker (event) {
+            $('input[name=Latitude]').val(event.latLng.lat());
+            $('input[name=Longitude]').val(event.latLng.lng());
+            map.setCenter(event.latLng);
         }
         
         function setCoordByAddress (address) {
