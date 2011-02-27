@@ -13,10 +13,10 @@ $Title
         <% if Title %><h3><a href="{$Top.Link}{$URLSegment}">$Title</a></h3><% end_if %>
         <% if Street %>$Street<br /><% end_if %>
         <% if Location.City %>$Location.Zip $Location.City<br /><% end_if %>
-        <% if Tel %>$Tel<br /><% end_if %>
-        <% if Mobile %>$Mobile<br /><% end_if %>
-        <% if Fax %>$Fax<br /><% end_if %>
-        <% if Fax %>$Email<br /><% end_if %>
+        <% if Tel %><% _t('PoiPage.ss.PHONE','PHONE') %> $Tel<br /><% end_if %>
+        <% if Mobile %><% _t('PoiPage.ss.MOBILE','MOBILE') %> $Mobile<br /><% end_if %>
+        <% if Fax %><% _t('PoiPage.ss.FAX','FAX') %> $Fax<br /><% end_if %>
+        <% if Email %><a href="mailto:$Email">$Email</a><br /><% end_if %>
     </div>
     <% end_control %>
 </div>

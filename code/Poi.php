@@ -27,14 +27,14 @@ class Poi extends DataObject {
         
         //take the location page title if no city is given
         $city = ($this->Location()->City) ? $this->Location()->City : $this->Location()->Title;
-        $cityField = new ReadonlyField('LocationInfo',_t('Location.Title','Location.Title'),$this->Location()->Zip . ' ' . $city . ', ' . $this->Location()->Country );
+        $cityField = new ReadonlyField('LocationInfo',_t('PoiLocationPage.TITLE','PoiLocationPage.TITLE'),$this->Location()->Zip . ' ' . $city . ', ' . $this->Location()->Country );
         $fields->push($cityField);
         $fields->merge($this->scaffoldFormFields(array(
        		'tabbed'=>false,
        		'restrictFields'=>array('Latitude','Longitude'))) 
         );
         
-        $fields->push(new FormAction('GetCoords',_t('Location.GETCOORDS','Location.GETCOORDS')));
+        $fields->push(new FormAction('GetCoords',_t('Poi.GETCOORDS','Poi.GETCOORDS')));
         $fields->push(new MapField('GoogleMap','GoogleMap'));
         
         return $fields;
