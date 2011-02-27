@@ -10,7 +10,8 @@ class Poi extends DataObject {
         'Fax' => 'Varchar(40)',
         'Email' => 'Varchar(255)',
         'Website' => 'Varchar(255)',
-        'URLSegment' => 'Varchar(255)'
+        'URLSegment' => 'Varchar(255)',
+        'Description' => 'Text'
     );
 
     static $has_one = array(
@@ -21,7 +22,7 @@ class Poi extends DataObject {
     public function getCMSFields() {
         $fields = $this->scaffoldFormFields(array(
        		'tabbed'=>false,
-       		'restrictFields'=>array('Title','Category','Tel','Mobile','Fax','Email','Website','Street'))
+       		'restrictFields'=>array('Title','Description','Category','Tel','Mobile','Fax','Email','Website','Street'))
         );
         
         //take the location page title if no city is given
