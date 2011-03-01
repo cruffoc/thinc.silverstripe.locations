@@ -42,7 +42,7 @@ $lang['de_DE']['PoiLocationPage']['SINGULARNAME'] = array(
 );
 $lang['de_DE']['PoiLocationPage']['TITLE'] = 'Ort';
 $lang['de_DE']['PoiPage.ss']['ADDRESS'] = 'Adresse';
-$lang['de_DE']['PoiPage.ss']['CONTACT_LOCATION'] = 'Kontakt & Ortsplan';
+$lang['de_DE']['PoiPage.ss']['CONTACT_LOCATION'] = 'Kontakt & Lageplan';
 $lang['de_DE']['PoiPage.ss']['EMAIL'] = 'Email';
 $lang['de_DE']['PoiPage.ss']['FAX'] = 'Fax';
 $lang['de_DE']['PoiPage.ss']['MOBILE'] = 'Handy';

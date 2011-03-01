@@ -57,7 +57,7 @@ class PoiLocationPage_Controller extends Page_Controller {
 	$(document).ready(function() {
 		var latlng = new google.maps.LatLng('.$poi->Latitude.','.$poi->Longitude.');
 		var myOptions = {
-			zoom: 16,
+			zoom: 14,
 			center: latlng,
 			disableDefaultUI: false,
 			mapTypeId: google.maps.MapTypeId.ROADMAP,

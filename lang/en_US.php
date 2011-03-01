@@ -35,7 +35,7 @@ $lang['en_US']['PoiLocationPage']['SINGULARNAME'] = array(
 );
 $lang['en_US']['PoiLocationPage']['TITLE'] = 'City';
 $lang['en_US']['PoiPage.ss']['ADDRESS'] = 'Address';
-$lang['en_US']['PoiPage.ss']['CONTACT_LOCATION'] = 'Contact & Location';
+$lang['en_US']['PoiPage.ss']['CONTACT_LOCATION'] = 'Contact & Map';
 $lang['en_US']['PoiPage.ss']['EMAIL'] = 'Email';
 $lang['en_US']['PoiPage.ss']['FAX'] = 'Fax';
 $lang['en_US']['PoiPage.ss']['MOBILE'] = 'Mobile';
