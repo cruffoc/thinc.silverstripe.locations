@@ -1,9 +1,6 @@
 <?php
 /**
- * Field that generates a heading tag.
- * This can be used to add extra text in your forms.
- * @package forms
- * @subpackage fields-dataless
+ * Map field to point for pois langitude and longitude positioning
  */
 class MapField extends DatalessField {
     
@@ -12,6 +9,7 @@ class MapField extends DatalessField {
      */
     protected $headingLevel = 2;
     private $divId;
+    
     function __construct($name, $title = null, $headingLevel = 2, $allowHTML = false, $form = null) {
     	$this->divId = $name;
         // legacy handling for old parameters: $title, $heading, ...
@@ -29,21 +27,24 @@ class MapField extends DatalessField {
         
         if($headingLevel) $this->headingLevel = $headingLevel;
         $this->allowHTML = $allowHTML;
-        //Requirements::javascript('http://maps.google.com/maps/api/js?sensor=false');
-        //Requirements::javascript('http://jakobsweg.c-web.ch/locations/javascript/PoiPopup.js');
         parent::__construct($name, $title, null, $allowHTML, $form);
     }
     
     function Field() {
+        Requirements::javascript('sapphire/thirdparty/jquery/jquery.js');
+        Requirements::javascript('sapphire/thirdparty/jquery-livequery/jquery.livequery.js');
+        Requirements::javascript('http://maps.google.com/maps/api/js?sensor=false');
+        Requirements::javascript('locations/javascript/mapField.js');
         $attributes = array(
-            'class' => $this->extraClass(),
+            'class' => 'middleColumn',
             'id' => $this->divId,
-            'style' => "width:400px;height:300px;"
+            'style' => "width:400px;height:300px;margin:5px 0px 5px 5px;position:relative;"
         );
-        return $this->createTag(
+        
+        return '<div style="width:400px;height:300px">' . $this->createTag(
             "div",
             $attributes
-        );
+        ) . '</div>';
     }
 }
 ?>

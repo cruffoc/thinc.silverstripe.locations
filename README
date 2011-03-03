@@ -1,0 +1,23 @@
+This is a Poi Management module for the cms Silverstripe (visit www.silverstripe.org)
+
+Maintainer Contact
+-----------------------------------------------
+Chris Weber
+<chris (at) thinc (dot) ch>
+
+Requirements
+-----------------------------------------------
+SilverStripe 2.4 or newer
+
+Documentation
+-----------------------------------------------
+will be available soon
+
+Installation Instructions
+-----------------------------------------------
+Rename project folder to locations
+copy news folder into the silverstripe base folder
+run {domain}/dev/build?flush=all
+
+Usage Overview 
+----------------------------------------------- 
