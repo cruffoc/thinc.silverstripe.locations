@@ -40,7 +40,7 @@ $lang['fr_FR']['PoiLocationPage']['SINGULARNAME'] = array(
 	50,
 	'Singular name of the object, used in dropdowns and to generally identify a single object in the interface'
 );
-$lang['fr_FR']['PoiLocationPage']['TITLE'] = 'Ville';
+$lang['fr_FR']['PoiLocationPage']['TITLE'] = 'Lieu';
 $lang['fr_FR']['PoiPage.ss']['ADDRESS'] = 'Adresse';
 $lang['fr_FR']['PoiPage.ss']['CONTACT_LOCATION'] = 'Contact & plan';
 $lang['fr_FR']['PoiPage.ss']['EMAIL'] = 'Email';
