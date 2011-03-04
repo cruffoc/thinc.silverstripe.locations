@@ -1,7 +1,7 @@
 @CHARSET "UTF-8";
-#GoogleMap {width:40%;height:250px;float:left;overflow: hidden;}
+#GoogleMap {width:45%;height:250px;float:left;overflow: hidden;}
 .contact span.label{margin-left:10px;width:60px;display:block;float:left;font-weight:bold;}
 .poi-info {margin-top:1em;}
 .poi-thumb {float:left;width:50%;margin-bottom:1.5em;}
-.poi-address {padding-left:41%;}
+.poi-address {padding-left:46%;}
 .poi-address span.label {font-weight: bold;width:60px;}
