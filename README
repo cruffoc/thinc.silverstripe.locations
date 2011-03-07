@@ -9,9 +9,6 @@ Requirements
 -----------------------------------------------
 SilverStripe 2.4 or newer
 
-Documentation
------------------------------------------------
-will be available soon
 
 Installation Instructions
 -----------------------------------------------
@@ -20,4 +17,16 @@ copy news folder into the silverstripe base folder
 run {domain}/dev/build?flush=all
 
 Usage Overview 
------------------------------------------------ 
+-----------------------------------------------
+1. Create PoiLocationPage
+2. Set City, Zip and Country (Tab: Location)
+3. Add Poi (Tab Pois)
+4. Set Adress
+5. Press Find Location by Address
+6. if marker isn't set exactly, drag it to the right place
+7. Save and your done!
+
+Planned Features
+-----------------------------------------------
+- Implement Category for Pois
+- Search Page (Filtering by Category, Location and text)
