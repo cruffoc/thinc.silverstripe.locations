@@ -15,10 +15,13 @@ $Title
     $Zip $City<br />
     $Country
 </div>
-<% if Pois %>
+<div id="GoogleMap" class="location-map"></div>
+<% if PoisWithLabel %>
 <div class="poi-info">  
-    <% control Pois %>
+    <% control PoisWithLabel %>
     <div class="poi-thumb">
+    <img src="http://www.google.com/mapfiles/marker{$Label}.png" class="poi-label" alt="Label"/>
+        <div class="location-poi-info">
         <% if Title %><h3><a href="{$Top.Link}{$URLSegment}">$Title</a></h3><% end_if %>
         <% if Street %>$Street<br /><% end_if %>
         <% if Location.City %>$Location.Zip $Location.City<br /><% end_if %>
@@ -26,7 +29,13 @@ $Title
         <% if Mobile %><% _t('PoiPage.ss.MOBILE','MOBILE') %> $Mobile<br /><% end_if %>
         <% if Fax %><% _t('PoiPage.ss.FAX','FAX') %> $Fax<br /><% end_if %>
         <% if Email %><a href="mailto:$Email">$Email</a><br /><% end_if %>
+        <% if Website %><a href="http://$Website" target="_blank">$Website</a><br /><% end_if %>
+        
+        </div>
     </div>
+    <% if Even %>
+        <div style="clear:both"></div>
+    <% end_if %>
     <% end_control %>
 </div>
 <% end_if %>

@@ -27,6 +27,7 @@ class PoiLocationPage extends Page {
 	    );
 	    return $fields;
 	}
+	
 }
 
 class PoiLocationPage_Controller extends Page_Controller {
@@ -39,6 +40,37 @@ class PoiLocationPage_Controller extends Page_Controller {
     public function init() {
         parent::init();
         Requirements::css('locations/css/locations.css');
+        Requirements::javascript(THIRDPARTY_DIR . '/jquery/jquery.js');
+        Requirements::javascript("http://maps.google.com/maps/api/js?sensor=false");
+    }
+    
+    public function index() {
+        Requirements::javascript('locations/javascript/poiLocationPage.js');
+        $jsPois = "var poiArray = new Array();\n";
+        $i = 0;
+        foreach ($this->getPoisWithLabel() AS $poi) {
+            $jsPois .= "poiArray.push({
+            			label:'".$poi->Label."',
+            			title:'".$poi->Title."',
+            			lat:'".$poi->Latitude."',
+            			lng:'".$poi->Longitude."'
+        	}); \n";
+            $i++;
+        }
+        Requirements::customScript($jsPois);
+        return $this->renderWith(array('PoiLocationPage','Page'));
+    }
+    
+    public function getPoisWithLabel() {
+        $pois = $this->obj('Pois');
+        if (!$pois)return null;
+        
+        $i = 0;        
+        foreach ($pois AS $poi) {
+            $poi->Label = chr(65 + $i);
+            $i++;
+        } 
+        return $pois;       
     }
     
     public function showPoi() {

@@ -18,6 +18,8 @@ class Poi extends DataObject {
 	   'Category' => 'PoiCategory',
        'Location' => 'PoiLocationPage'
     );
+    
+    static $default_sort = "Title";
 
     public function getCMSFields() {
         $fields = $this->scaffoldFormFields(array(

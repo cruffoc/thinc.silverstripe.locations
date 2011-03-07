@@ -22,7 +22,7 @@ $Title
 <% end_if %>
 <div class="contact">
 <h3><% _t('CONTACT_LOCATION','CONTACT_LOCATION') %></h3>
-    <div id="GoogleMap"></div>
+    <div id="GoogleMap" class="poi-map"></div>
     <div class="poi-address">
          <% if Street %><span class="label"><% _t('ADDRESS','ADDRESS') %></span>$Street<br /><% end_if %>
          <% if Location %><span class="label">&nbsp;</span>$Location.Zip <% if Location.City %>$Location.City<% else %>$Location.Title<% end_if %><br /><% end_if %>
