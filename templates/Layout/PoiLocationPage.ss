@@ -28,8 +28,8 @@ $Title
         <% if Tel %><% _t('PoiPage.ss.PHONE','PHONE') %> $Tel<br /><% end_if %>
         <% if Mobile %><% _t('PoiPage.ss.MOBILE','MOBILE') %> $Mobile<br /><% end_if %>
         <% if Fax %><% _t('PoiPage.ss.FAX','FAX') %> $Fax<br /><% end_if %>
-        <% if Email %><a href="mailto:$Email">$Email</a><br /><% end_if %>
         <% if Website %><a href="http://$Website" target="_blank">$Website</a><br /><% end_if %>
+        <% if Email %><a href="mailto:$Email">$Email</a><br /><% end_if %>
         
         </div>
     </div>
