@@ -21,17 +21,17 @@ $Title
     <p>$Description</p>
 <% end_if %>
 <div class="contact">
-<h3><% _t('CONTACT_LOCATION','CONTACT_LOCATION') %></h3>
+<!-- <h3><% _t('CONTACT_LOCATION','CONTACT_LOCATION') %></h3> -->
     <div id="GoogleMap" class="poi-map"></div>
     <div class="poi-address">
-         <% if Street %><span class="label"><% _t('ADDRESS','ADDRESS') %></span>$Street<br /><% end_if %>
+         <% if Street %><span class="label"><% _t('ADDRESS','Direccion') %></span>$Street<br /><% end_if %>
          <% if Location %><span class="label">&nbsp;</span>$Location.Zip <% if Location.City %>$Location.City<% else %>$Location.Title<% end_if %><br /><% end_if %>
-         <% if Tel %><span class="label"><% _t('PHONE','PHONE') %></span>$Tel<br /><% end_if %>
-         <% if Mobile %><span class="label"><% _t('MOBILE','MOBILE') %></span>$Mobile<br /><% end_if %>
-         <% if Fax %><span class="label"><% _t('FAX','FAX') %></span>$Fax<br /><% end_if %>
+         <% if Tel %><span class="label"><% _t('PHONE','Telefono') %></span>$Tel<br /><% end_if %>
+         <% if Mobile %><span class="label"><% _t('MOBILE','Celular') %></span>$Mobile<br /><% end_if %>
+         <% if Fax %><span class="label"><% _t('FAX','Fax') %></span>$Fax<br /><% end_if %>
     
-        <% if Website %><span class="label"><% _t('WEBSITE','WEBSITE') %></span><a href="http://$Website" target="_blank">$Website</a><br /><% end_if %>
-        <% if Email %><span class="label"><% _t('EMAIL','EMAIL') %></span><a href="mailto:$Email">$Email</a><% end_if %>
+        <% if Website %><span class="label"><% _t('WEBSITE','Sitio') %></span><a href="http://$Website" target="_blank">$Website</a><br /><% end_if %>
+        <% if Email %><span class="label"><% _t('EMAIL','Email') %></span><a href="mailto:$Email">$Email</a><% end_if %>
     </div>
 </div>
 <% end_control %>
